@@ -23,7 +23,7 @@ public class TestQuitClose extends Base {
         }
 
         Set<String> handlessSet = driver.getWindowHandles();
-        List<String> handlessList = new ArrayList<String>(handlessSet);
+        List<String> handlessList = new ArrayList<>(handlessSet);
 
         driver.switchTo().window(handlessList.get(0));
 
