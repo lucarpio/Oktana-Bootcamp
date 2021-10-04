@@ -30,6 +30,8 @@ public class TestQuitClose extends Base {
         driver.close();
 
         Thread.sleep(3000);
+
+        driver.quit();
     }
 
 }

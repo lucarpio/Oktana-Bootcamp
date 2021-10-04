@@ -70,7 +70,7 @@ public class TestDOC extends Base {
     }
 
     @Test
-    void testForm() {
+    void testForm() throws InterruptedException {
         WebElement myAccount = driver.findElement(By.linkText("My Account"));
         myAccount.click();
         WebElement register = driver.findElement(By.linkText("Register"));
@@ -79,12 +79,28 @@ public class TestDOC extends Base {
         firstNameInput.sendKeys("first name test");
         WebElement lastNameInput = driver.findElement(By.name("lastname"));
         lastNameInput.sendKeys("last name test");
-        WebElement emailInput = driver.findElement(By.xpath(""));
+        WebElement emailInput = driver.findElement(By.xpath("//*[@id=\"input-email\"]"));
         emailInput.sendKeys(RandomEmail.randomEmail());
         WebElement telephoneInput = driver.findElement(By.id("input-telephone"));
         telephoneInput.sendKeys("912345678");
-        WebElement pwdInput = driver.findElement(By.id());
-        pwdInput.sendKeys();
+        WebElement pwdInput = driver.findElement(By.name("password"));
+        pwdInput.sendKeys("test1234");
+        WebElement pwd2Input = driver.findElement(By.name("confirm"));
+        pwd2Input.sendKeys("test1234");
+
+        List<WebElement> radioBtns = driver.findElements(By.name("newsletter"));
+        radioBtns.get(1).click();
+        Thread.sleep(2000);
+        WebElement privacyCheckBox = driver.findElement(By.name("agree"));
+        privacyCheckBox.click();
+        WebElement continueBtn = driver.findElement(By.cssSelector("#content > form > div > div > input.btn.btn-primary"));
+        continueBtn.click();
+        Thread.sleep(4000);
+    }
+
+    @AfterTest
+    void closeDriver() {
+        driver.close();
     }
 
 }
