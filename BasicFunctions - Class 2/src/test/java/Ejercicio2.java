@@ -48,8 +48,7 @@ public class Ejercicio2 extends Base {
     }
 
     @AfterTest
-    void close() throws InterruptedException {
-        Thread.sleep(3000);
+    void close() {
         driver.close();
     }
 
