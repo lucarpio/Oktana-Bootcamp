@@ -17,6 +17,11 @@ public class MainPO {
     @FindBy(xpath = "//a[contains(.,'Register')]")
     private WebElement btnRegister;
 
+    @FindBy(xpath = "//ul[contains(@class,'dropdown')]//a[contains(.,'My Account')]")
+    private WebElement btnMyAccountSub;
+
+    @FindBy(xpath = "//a[contains(.,'Logout')]")
+    private WebElement btnLogout;
 
     final String url = "https://demo.opencart.com";
 
@@ -34,4 +39,18 @@ public class MainPO {
         btnRegister.click();
     }
 
+    public void clickOnLogin() {
+        btnMyAccount.click();
+        btnLogin.click();
+    }
+
+    public void goToMyAccount(){
+        btnMyAccount.click();
+        btnMyAccountSub.click();
+    }
+
+    public void logout(){
+        btnMyAccount.click();
+        btnLogout.click();
+    }
 }

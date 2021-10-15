@@ -6,4 +6,9 @@
             <class name="com.opencart.accounttests.SignUp"/>
         </classes>
     </test>
+    <test name="Test My Account">
+        <classes>
+            <class name="com.opencart.accounttests.MyAccount"/>
+        </classes>
+    </test>
 </suite>
