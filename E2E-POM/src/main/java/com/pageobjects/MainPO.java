@@ -44,12 +44,12 @@ public class MainPO {
         btnLogin.click();
     }
 
-    public void goToMyAccount(){
+    public void goToMyAccount() {
         btnMyAccount.click();
         btnMyAccountSub.click();
     }
 
-    public void logout(){
+    public void logout() {
         btnMyAccount.click();
         btnLogout.click();
     }
